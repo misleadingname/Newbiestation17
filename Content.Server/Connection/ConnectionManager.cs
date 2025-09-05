@@ -111,6 +111,7 @@ namespace Content.Server.Connection
 
         private async Task NetMgrOnConnecting(NetConnectingArgs e)
         {
+            _sawmill.Debug("ARE YOU EVEN RUNNING");
             var deny = await ShouldDeny(e);
 
             var addr = e.IP.Address;
@@ -283,7 +284,8 @@ namespace Content.Server.Connection
             }
 
             // DeltaV - Replace existing softwhitelist implementation
-            if (false)//if (_cfg.GetCVar(CCVars.WhitelistEnabled) && adminData is null)
+            // if (false)
+            if (_cfg.GetCVar(CCVars.WhitelistEnabled) && adminData is null)
             {
                 if (_whitelists is null)
                 {

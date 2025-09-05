@@ -45,4 +45,8 @@ public sealed partial class SummonPsionicFamiliarActionEvent : InstantActionEven
     /// </summary>
     [DataField]
     public int MaxGlimmer;
+
+    public SummonPsionicFamiliarActionEvent(string powerName) {
+        PowerName = powerName;
+    }
 }
